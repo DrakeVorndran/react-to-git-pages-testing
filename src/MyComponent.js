@@ -1,10 +1,10 @@
 import React from 'react'
 import './MyComponent.css'
 
-function MyComponent() {
+function MyComponent(props) {
   return (
     <div className='my-component'>
-      <h1>Hello World</h1>
+      <h1>{props.text}</h1>
     </div>
   )
 }

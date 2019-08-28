@@ -1,28 +1,28 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import MyComponent from './MyComponent'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <MyComponent />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          
+            <Route exact path="/hello" render={() => <MyComponent text="Hello World"/>}/>
+            <Route exact path="/goodbye" render={() => <MyComponent text="Goodbye World"/>}/>
+            <Route exact path="/orange" render={() => <MyComponent text="I like oranges"/>}/>
+          
+          <Link to="hello">hi</Link>
+          <Link to="goodbye">bye</Link>
+          <Link to="orange">fruit</Link>
+          
+        </header>
+      </div>
+    </Router>
   );
 }
 
