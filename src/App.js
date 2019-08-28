@@ -3,11 +3,11 @@ import React from 'react';
 import './App.css';
 
 import MyComponent from './MyComponent'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <Router basename='/'>
       <div className="App">
         <header className="App-header">
           <Switch>
